@@ -20,6 +20,13 @@
       "maxzoom": 20
     },
 
+    "osm": {
+      "type": "raster",
+      "tiles": [
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+      ]
+    },
+
     "lcrpgr": {
       "type": "vector",
       "url": "pmtiles://./pmtiles/polygon1km_pop-dis-lcrpgr.pmtiles"
@@ -31,9 +38,19 @@
     }
 
   },
+
   "sprite": "https://basemap.sphere.gistda.or.th/vector/sprite",
   "glyphs": "https://basemap.sphere.gistda.or.th/vector/fonts/{fontstack}/{range}.pbf",
   "layers": [
+
+    {
+      "id": "osm-layer",
+      "type": "raster",
+      "source": "osm",
+      "minzoom": 0,
+      "maxzoom": 19
+    },
+    
     {
       "id": "background",
       "type": "background",
